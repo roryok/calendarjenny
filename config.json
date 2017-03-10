@@ -1,0 +1,61 @@
+{
+  "year": 2017,
+  "dataSets": [
+    {
+      "type": "yaml",
+      "file": "./data/birthdays.yaml",
+      "comment": "a yaml file containing birthdays, without a year (dates are the same every year)"
+    },
+    {
+      "type": "url",
+      "url": "https://www.timeanddate.com/holidays/ireland/",
+      "className": "holiday",
+      "comment": "a url to a list of dates. class must be provided",
+      "nameheader": "Holiday Name",
+      "dateheader": "Date"
+    },
+    {
+      "type": "observances",
+      "className": "event",
+      "icon": "fa-beer",
+      "data": [
+        {
+          "date": "2017-02-14",
+          "name": "Valentines Day",
+          "color": "pink",
+          "icon": "fa-heart"
+        }
+      ]
+    },
+    {
+      "type": "events",
+      "className": "event",
+      "data": [
+        {
+          "date": "2017-02-07",
+          "type": "recurring",
+          "every": "2 weeks",
+          "name": "clean out the fridge",
+          "icon": "fa-fire-extinguisher",
+          "color": "#efefef"
+        },
+        {
+          "date": "2017-02-06",
+          "type": "recurring",
+          "every": "2 weeks",
+          "name": "bins",
+          "icon": "fa-trash",
+          "color": "#efefef"
+        },
+        {
+          "date": "2017-04-03",
+          "until": "2017-04-06",
+          "type": "single",
+          "name": "conference",
+          "icon": "fa-plane",
+          "color": "#efcfcf"
+        }
+      ]
+    }
+  ]
+}

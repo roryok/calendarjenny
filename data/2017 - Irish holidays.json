@@ -1,0 +1,183 @@
+{
+    "calendar": "Irish National Holidays",
+    "icon": "beer.png",
+    "months": [
+        {
+            "month": "January",
+            "observances": [],
+            "days": [
+                {
+                    "date": "1st January",
+                    "observances": [
+                        "New Year's Day"
+                    ]
+                }
+            ]
+        },
+        {
+            "month": "February",
+            "observances": [],
+            "days": [			
+                {
+                    "date": "9th February",
+                    "observances": [
+                        "Pancake Tuesday"
+                    ]
+                },
+				{
+                    "date": "14th February",
+                    "observances": [
+                        "St Valentine's Day"
+                    ]
+                }
+			]
+        },
+        {
+            "month": "March",
+            "observances": [],
+            "days": [
+                {
+                    "date": "6th March",
+                    "observances": [
+                        "Mother's Day"
+                    ]
+                },
+                {
+                    "date": "17th March",
+                    "observances": [
+                        "St. Patrick's Day"
+                    ]
+                },
+                {
+                    "date": "27th March",
+                    "observances": [
+                        "Easter Sunday"
+                    ]
+                },
+                {
+                    "date": "28th March",
+                    "observances": [
+                        "Easter Monday - Bank Holiday!"
+                    ]
+                }
+            ]
+        },
+        {
+            "month": "April",
+            "observances": [],
+            "days": [
+            ]
+        },
+        {
+            "month": "May",
+            "observances": [],
+            "days": [
+                {
+                    "date": "4th May",
+                    "observances": [
+                        "Star Wars Day"
+                    ]
+                },
+				{
+                    "date": "5th May",
+                    "observances": [
+                        "May Day - Bank Holiday!"
+                    ]
+                }
+            ]
+        },
+        {
+            "month": "June",
+            "observances": [],
+            "days": [
+                {
+                    "date": "6th June",
+                    "observances": [
+                        "June Bank Holiday"
+                    ]
+                },
+                {
+                    "date": "19th June",
+                    "observances": [
+                        "Father's Day"
+                    ]
+                }
+            ]
+        },
+        {
+            "month": "July",
+            "observances": [],
+            "days": []
+        },
+        {
+            "month": "August",
+            "observances": [],
+            "days": [
+                {
+                    "date": "1st August",
+                    "observances": [
+                        "August Bank Holiday"
+                    ]
+                }
+            ]
+        },
+        {
+            "month": "September",
+            "observances": [],
+            "days": []
+        },
+        {
+            "month": "October",
+            "observances": [],
+            "days": [
+                {
+                    "date": "31th October",
+                    "observances": [
+                        "Halloween - Bank Holiday"
+                    ]
+                }
+            ]
+        },
+        {
+            "month": "November",
+            "observances": [],
+            "days": []
+        },
+        {
+            "month": "December",
+            "observances": [],
+            "days": [
+                {
+                    "date": "24th December",
+                    "observances": [
+                        "Christmas Eve"
+                    ]
+                },
+                {
+                    "date": "25th December",
+                    "observances": [
+                        "Christmas Day"
+                    ]
+                },
+                {
+                    "date": "26th December",
+                    "observances": [
+                        "St. Stephen's Day"
+                    ]
+                },
+                {
+                    "date": "27th December",
+                    "observances": [
+                        "Bank Holiday"
+                    ]
+                },
+                {
+                    "date": "31st December",
+                    "observances": [
+                        "New Year's Eve"
+                    ]
+                }
+            ]
+        }
+    ]
+}

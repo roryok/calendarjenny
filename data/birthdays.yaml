@@ -1,0 +1,11 @@
+calendar: Birthdays
+year: null
+icon: fa-birthday-cake 
+className: birthday
+dates: 
+ Dave's Birthday: 01-09
+ Louise's Birthday: 02-09
+ Kevin's Birthday: 06-14
+ Mom's Birthday: 06-25
+ Dad's Birthday: 08-30
+ Ben's Birthday: 10-15

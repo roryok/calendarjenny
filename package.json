@@ -1,0 +1,21 @@
+{
+  "name": "CalendarJenny",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "calendar": "^0.1.0",
+    "html-table-to-json": "^0.2.0",
+    "moment": "^2.17.1",
+    "request": "^2.79.0",
+    "table-to-json": "^0.11.1",
+    "tabletojson": "^0.4.0"
+  }
+}
