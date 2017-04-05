@@ -7,7 +7,7 @@ const request = require("request");
 const async = require('async');
 const moment = require('moment');
 
-var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 // load data from config.json
 var config = require('./config.json');
