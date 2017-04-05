@@ -14,29 +14,40 @@ var config = require('./config.json');
 
 async.map(config.dataSets, function (ds, callback) {
         
+    // handle yaml based data
     if (ds.type == "yaml")
     {
-        try {
+        try 
+        {
             console.log("processing dataset - type: yaml, file: " + ds.file)
+            // read yaml file into memory
             var doc = yaml.safeLoad(fs.readFileSync(ds.file, 'utf8'));
+            // add empty data array to dataset
             ds.data = [];
+            // add a data object to the dataset for each date
             for(var j in doc.dates)
             {
                 ds.data.push({ date: new Date(config.year + " " + doc.dates[j]), name: j });
             }  
-            ds.className = doc.className;
+            // inherit some values from the yaml document
+            ds.className = doc.className;            
             ds.icon = doc.icon;
             callback(null)
         } catch (e) {
             console.error(e);
         }
     }
-    else if ( ds.type == "url")
+    // process entries from timeanddate.com
+    else if ( ds.type == "timeanddate.com")
     {
         try {
             console.log("processing dataset - type: url, url: " + ds.url)
+            // find a table at the end url and process it 
+            // (this has only had limited testing, mostly used to pull national holidays from timeanddate.com
             tabletojson.convertUrl(ds.url, function(tablesAsJson) {
-                ds.data = tablesAsJson[0];        
+                // get data from first table
+                ds.data = tablesAsJson[0];  
+                // for each data object in our data, add year to date, and set name to the column header
                 for(var j in ds.data)
                 {
                     ds.data[j].date = new Date(config.year + " " + ds.data[j][ds.dateheader])
@@ -49,6 +60,7 @@ async.map(config.dataSets, function (ds, callback) {
             console.error(e);
         }
     }
+    // process native dataset (see config.json for samples)
     else
     {
         console.log("processing dataset - type: " + ds.type);
@@ -112,7 +124,7 @@ async.map(config.dataSets, function (ds, callback) {
     });
 });
 
-
+// remove leading zeros from dates
 function dezero(date)
 {
     var bits = date.split('-');
@@ -123,17 +135,17 @@ function dezero(date)
     return bits.join("-");
 }
 
-
-function buildHtml(y, callback)
+// build HTML file for a given year
+function buildHtml(year, callback)
 {
     var o = "";
-    for (i = 0; i < 12; i++)
+    for (month = 0; month < 12; month++)
     {
-        var m = cal.monthDates(y, i,            // January is 0 in JS Date
+        var m = cal.monthDates(year, month,            // January is 0 in JS Date
            function (d) { return (' ' + d.getDate()).slice(-2) },
            function (w) { return w }
         );
-        buildMonthHtml(i, m, function (err, html) {
+        buildMonthHtml(month, m, function (err, html) {
             if (err) {
                 return console.log(err);
             }
@@ -143,6 +155,7 @@ function buildHtml(y, callback)
     return callback(null, o);
 }
 
+// build and return HTML for a given month
 function buildMonthHtml(monthIndex, weeks, callback)
 {
     try
@@ -150,8 +163,10 @@ function buildMonthHtml(monthIndex, weeks, callback)
 
         var o = "";
 
+        // get month name
         o += "\r\n\t" + "<h2>" + monthNames[monthIndex] + "</h2>"
 
+        // a string containing the classes that will be applied to this month
         var monthClasses = (weeks.length == 4 ? "stretch" : (weeks.length == 6 ? "squish" : ""));
         
         o += "\r\n\t" + "<ul class='month " + monthClasses + "' data-month='" + weeks + "'>";
